@@ -189,7 +189,7 @@ a.tk{text-decoration:none}a.tk:hover{background:var(--violet);color:var(--panel)
       <div class="chips" id="chips"></div>
     </div>
     <div class="list" id="list"></div>
-    <div class="rail-foot">HS codes are indicative (6-digit international HS 2022). Confirm the product-specific Thai/AHTN classification before declaration. Suppliers are representative, not ranked; listing does not imply DHL approval, a customer relationship, or Thailand distribution.</div>
+    <div class="rail-foot">HS codes are indicative (6-digit international HS 2022). Confirm the product-specific Thai/AHTN classification before declaration. Suppliers are representative, not ranked. Independent personal project, not affiliated with or endorsed by any company listed or by the author's employer.</div>
   </aside>
 
   <main class="stage" id="stage">
@@ -1675,7 +1675,7 @@ function openZone(z, catId){
   head.innerHTML = `<div class="eyebrow">${esc(z.where)} · ${z.cats.length?z.cats.length+(z.cats.length>1?" Categories":" Category"):"Support Function"}</div><h2>${esc(z.name)}</h2><p>${esc(z.desc)}</p>${staffOf[z.id]?`<p class="duty"><b>On Duty: ${esc(staffOf[z.id].role)}.</b> ${esc(staffOf[z.id].duty)}</p>`:""}
     <div class="gtags">${z.groups.map(g=>`<span class="gtag" style="--c:${gVar(g)}">${g}</span>`).join("")}</div>
     <button class="x" aria-label="Close">×</button>`;
-  body.innerHTML = z.cats.length ? z.cats.map(c=>catCard(byId[c])).join("") + `<p class="disc">HS codes are indicative 6-digit HS 2022 codes; hover a code for its description. Suppliers are representative, not ranked, and do not imply DHL approval.</p>` : `<p class="disc">No product categories from the workbook are placed in this area. It is shown because every real data center needs it.</p>`;
+  body.innerHTML = z.cats.length ? z.cats.map(c=>catCard(byId[c])).join("") + `<p class="disc">HS codes are indicative 6-digit HS 2022 codes; hover a code for its description. Suppliers are representative, not ranked, and do not imply any endorsement.</p>` : `<p class="disc">No product categories from the workbook are placed in this area. It is shown because every real data center needs it.</p>`;
   sheet.classList.add("open");
   body.scrollTop=0;
   if(catId){const el=$("card-"+catId); if(el){body.scrollTop=Math.max(0,el.offsetTop-body.offsetTop-8); el.classList.add("flash"); setTimeout(()=>el.classList.remove("flash"),1300)}}
@@ -1697,7 +1697,7 @@ function openSupplier(name){
       <div class="hs">${esc(d.g)} · ${esc(d.sg)}</div>
       <div class="hsrow"><span class="lbl">HS</span>${hsChips(d)}</div>
       <button class="where" data-zone="${zoneOf[c].id}" data-cat="${c}">${esc(zoneOf[c].name)}</button>
-    </article>`}).join("") + `<p class="disc">Selected for market presence, not a revenue ranking. HQ is the corporate headquarters, not the country of origin of goods. Listing does not imply DHL approval, a customer relationship, or Thailand distribution.</p>`;
+    </article>`}).join("") + `<p class="disc">Selected for market presence, not a revenue ranking. HQ is the corporate headquarters, not the country of origin of goods. Listing does not imply any endorsement or business relationship.</p>`;
   sheet.classList.add("open"); body.scrollTop=0;
   flyTo(null, zs); applyFocus(); renderList();
 }
